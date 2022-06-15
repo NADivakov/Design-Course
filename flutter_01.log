@@ -1,0 +1,86 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --no-color run --machine --track-widget-creation --device-id=edge --start-paused --dart-define=flutter.inspector.structuredErrors=true --devtools-server-address=http://127.0.0.1:9100 lib\main.dart
+
+## exception
+
+StateError: Bad state: No context with the running Dart application.
+
+```
+#0      RemoteDebuggerExecutionContext.id (package:dwds/src/debugging/execution_context.dart:55:7)
+<asynchronous suspension>
+#1      AppInspector._getExtensionRpcs (package:dwds/src/debugging/inspector.dart:538:20)
+<asynchronous suspension>
+#2      AppInspector._initialize (package:dwds/src/debugging/inspector.dart:97:34)
+<asynchronous suspension>
+#3      AppInspector.initialize (package:dwds/src/debugging/inspector.dart:160:5)
+<asynchronous suspension>
+#4      ChromeProxyService.createIsolate (package:dwds/src/services/chrome_proxy_service.dart:216:18)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 2.10.5, on Microsoft Windows [Version 10.0.19044.1706], locale ru-RU)
+    • Flutter version 2.10.5 at C:\src\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 5464c5bac7 (5 weeks ago), 2022-04-18 09:55:37 -0700
+    • Engine revision 57d3bac3dd
+    • Dart version 2.16.2
+    • DevTools version 2.9.2
+
+[!] Android toolchain - develop for Android devices (Android SDK version 33.0.0-rc3)
+    • Android SDK at C:\Users\bossxexe\AppData\Local\Android\sdk
+    • Platform android-32, build-tools 33.0.0-rc3
+    • Java binary at: F:\android studio\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b01)
+    ! Some Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses
+
+[✓] Chrome - develop for the web
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[!] Visual Studio - develop for Windows (Visual Studio Community 2019 16.8.3)
+    • Visual Studio at D:\пампос\visual\vss
+    • Visual Studio Community 2019 version 16.8.30804.86
+    ✗ Visual Studio is missing necessary components. Please re-run the Visual Studio installer for the "Desktop development with C++" workload, and include these components:
+        MSVC v142 - VS 2019 C++ x64/x86 build tools
+         - If there are multiple build tool versions available, install the latest
+        C++ CMake tools for Windows
+        Windows 10 SDK
+
+[✓] Android Studio (version 4.1)
+    • Android Studio at F:\android studio
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b01)
+
+[✓] IntelliJ IDEA Community Edition (version 2020.3)
+    • IntelliJ at F:\java\IntelliJ IDEA Community Edition 2020.3.2
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+
+[✓] IntelliJ IDEA Ultimate Edition (version 2021.3)
+    • IntelliJ at C:\Program Files\JetBrains\IntelliJ IDEA 2021.3
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+
+[✓] Connected device (2 available)
+    • Chrome (web) • chrome • web-javascript • Google Chrome 101.0.4951.67
+    • Edge (web)   • edge   • web-javascript • Microsoft Edge 101.0.1210.47
+
+[!] HTTP Host Availability
+    ✗ HTTP host https://pub.dev/ is not reachable. Reason: An error occurred while checking the HTTP host: HttpException: Connection closed before full header was received, uri = https://pub.dev/
+    ✗ HTTP host https://cloud.google.com/ is not reachable. Reason: An error occurred while checking the HTTP host: HttpException: Connection closed before full header was received, uri = https://cloud.google.com/
+
+! Doctor found issues in 3 categories.
+```
